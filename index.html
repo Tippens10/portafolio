@@ -67,6 +67,19 @@ p { margin: 0; }
 .btn.ghost { border-color: currentColor; }
 .btn.ghost:hover { background: rgba(127,127,127,.12); }
 .btn.text { padding-inline: 0; }
+
+/* selector de idioma del CV */
+.cvpick { position: relative; display: inline-block; }
+.cvpick summary { list-style: none; user-select: none; }
+.cvpick summary::-webkit-details-marker { display: none; }
+.cvpick .caret { width: 0; height: 0; border-inline: 4px solid transparent; border-top: 5px solid currentColor; transition: transform .2s; }
+.cvpick[open] .caret { transform: rotate(180deg); }
+.cvmenu { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; min-width: 190px; background: #fff; color: var(--ink); border: 1px solid var(--line); border-top: 3px solid var(--orange); box-shadow: 0 10px 30px rgba(0,0,0,.18); padding: 4px 0; }
+.cvpick.right .cvmenu { left: auto; right: 0; }
+.cvmenu a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 14px; text-decoration: none; font-size: 0.9rem; }
+.cvmenu a + a { border-top: 1px solid var(--line); }
+.cvmenu a span { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: .08em; color: var(--muted); }
+.cvmenu a:hover { background: #fff4ee; color: var(--orange-ink); }
 .btn.text:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* ---------- hero ---------- */
@@ -74,6 +87,8 @@ p { margin: 0; }
 .hero::before { content: ""; position: absolute; inset: 0; background: url("img/hct-taller.jpg") center 40% / cover no-repeat; filter: grayscale(1) contrast(1.05); opacity: .55; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.55) 60%, rgba(10,10,10,.35) 100%), linear-gradient(0deg, rgba(10,10,10,.9), transparent 45%); }
 .hero > * { position: relative; z-index: 1; }
+.hero > .nav { z-index: 3; }
+.hero > .hero-body { z-index: 2; }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; padding-top: max(18px, env(safe-area-inset-top, 0px)); }
 .brand { display: inline-flex; align-items: center; gap: 10px; font: 600 0.95rem var(--f-display); letter-spacing: -0.01em; text-decoration: none; }
 .brand i { width: 14px; height: 14px; background: var(--orange); display: block; }
@@ -265,7 +280,10 @@ footer { background: var(--dark); color: #e9e9e6; }
       <a href="#habilidades">Habilidades</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn" href="https://tippens10.github.io/cv/Orlando-Acosta-Pinto-CV.pdf" target="_blank" rel="noopener" download>Descargar CV</a>
+    <details class="cvpick right">
+      <summary class="btn">Descargar CV <span class="caret" aria-hidden="true"></span></summary>
+      <div class="cvmenu"><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-ES.pdf" target="_blank" rel="noopener" download><b>Español</b><span>PDF</span></a><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-EN.pdf" target="_blank" rel="noopener" download lang="en"><b>English</b><span>PDF</span></a></div>
+    </details>
   </div>
 
   <div class="pad hero-body">
@@ -274,7 +292,10 @@ footer { background: var(--dark); color: #e9e9e6; }
       <h1>Orlando Josue Acosta Pinto</h1>
       <p class="lead">Automatización, coordinación operativa y gestión de datos para la industria del petróleo y gas. Formado en Halliburton (DEEP) y Baker Hughes, en Cd. del Carmen.</p>
       <div class="cta">
-        <a class="btn o" href="https://tippens10.github.io/cv/Orlando-Acosta-Pinto-CV.pdf" target="_blank" rel="noopener" download>Descargar CV (PDF) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg></a>
+        <details class="cvpick">
+          <summary class="btn o">Descargar CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg></summary>
+          <div class="cvmenu"><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-ES.pdf" target="_blank" rel="noopener" download><b>Español</b><span>PDF</span></a><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-EN.pdf" target="_blank" rel="noopener" download lang="en"><b>English</b><span>PDF</span></a></div>
+        </details>
         <a class="btn text" href="#proyectos">Ver proyectos →</a>
       </div>
     </div>
@@ -489,7 +510,10 @@ footer { background: var(--dark); color: #e9e9e6; }
           <p>Abierto a oportunidades en ingeniería, operaciones y energía.</p>
         </div>
       </div>
-      <a class="btn o" href="https://tippens10.github.io/cv/Orlando-Acosta-Pinto-CV.pdf" target="_blank" rel="noopener" download>Descargar CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg></a>
+      <details class="cvpick right">
+        <summary class="btn o">Descargar CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg></summary>
+        <div class="cvmenu"><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-ES.pdf" target="_blank" rel="noopener" download><b>Español</b><span>PDF</span></a><a href="https://tippens10.github.io/portafolio/cv/Orlando-Acosta-Pinto-CV-EN.pdf" target="_blank" rel="noopener" download lang="en"><b>English</b><span>PDF</span></a></div>
+      </details>
     </div>
   </section>
 </main>
@@ -521,6 +545,15 @@ footer { background: var(--dark); color: #e9e9e6; }
       } catch (e) { selectText(el); show('Texto seleccionado, usa Ctrl+C'); }
     });
   });
+
+  // Selector de CV: solo uno abierto a la vez; se cierra al tocar fuera, con Esc o al elegir idioma
+  var picks = document.querySelectorAll('.cvpick');
+  picks.forEach(function (d) {
+    d.addEventListener('toggle', function () { if (d.open) picks.forEach(function (o) { if (o !== d) o.open = false; }); });
+    d.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { d.open = false; }); });
+  });
+  document.addEventListener('click', function (e) { picks.forEach(function (d) { if (!d.contains(e.target)) d.open = false; }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') picks.forEach(function (d) { d.open = false; }); });
 
   // Las fotos de Halliburton pasan a color al entrar en pantalla y vuelven a gris al salir
   var photos = document.querySelectorAll('.card img, .gallery img');
