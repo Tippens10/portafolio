@@ -178,11 +178,14 @@ a.chip:hover { border-color: var(--ink); }
 .year { font: 500 2.4rem var(--f-display); letter-spacing: -0.04em; line-height: 1; }
 .job h3 { font-size: 1.7rem; }
 .job .pos { margin-top: 6px; font-weight: 500; }
-.job-photo { margin: 24px 0 0; position: relative; overflow: hidden; background: #d9d8d4; border-top: 4px solid var(--orange); }
-.job-photo img { display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 62%; filter: grayscale(1); transition: filter .9s ease; }
+.bh-grid { margin-top: 24px; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
+.bh-grid .bullets { margin-top: 0; grid-template-columns: minmax(0, 1fr); }
+.bh-grid .bullets li:first-child { border-top: 0; padding-top: 0; }
+@media (max-width: 760px) { .bh-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; } .bh-grid .job-photo { max-width: 360px; } }
+.job-photo { margin: 0; position: relative; overflow: hidden; background: #d9d8d4; border-top: 4px solid var(--orange); }
+.job-photo img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; filter: grayscale(1); transition: filter .9s ease; }
 .job-photo img.color { filter: none; }
 .job-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 14px 10px; font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
-@media (max-width: 600px) { .job-photo img { aspect-ratio: 4 / 3; } }
 .bullets { margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; padding: 0; list-style: none; }
 .bullets li { padding: 12px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: #383836; display: flex; gap: 12px; }
 .bullets li span { font-family: var(--f-mono); font-size: 0.68rem; color: var(--orange-ink); padding-top: 3px; }
@@ -398,6 +401,7 @@ footer { background: var(--dark); color: #e9e9e6; }
     <div class="main">
       <h3>Baker Hughes</h3>
       <p class="pos">Practicante · Soporte de Operaciones y Personal</p>
+      <div class="bh-grid">
       <figure class="job-photo"><img src="img/baker-hughes-base.jpg" alt="Edificio de Baker Hughes en Ciudad del Carmen" loading="lazy"><figcaption>Base Cd. del Carmen</figcaption></figure>
       <ul class="bullets">
         <li><span>01</span><p>Administré bases de datos de personal para operaciones en <b>LATAM</b> y coordiné su movilización a sitios de perforación.</p></li>
@@ -408,6 +412,7 @@ footer { background: var(--dark); color: #e9e9e6; }
         <li><span>06</span><p>Con el Service Delivery Coordinator, cargué reportes de condición de herramientas para planear el mantenimiento.</p></li>
         <li><span>07</span><p>Implementé ajustes operativos que redujeron tiempos de respuesta y mejoraron la eficiencia del equipo.</p></li>
       </ul>
+      </div>
     </div>
   </section>
 
