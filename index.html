@@ -200,13 +200,14 @@ a.chip:hover { border-color: var(--ink); }
 }
 
 /* ---------- habilidades: tabla naranja ---------- */
-.spec { margin-top: 28px; background: var(--orange); color: #141414; }
+.spec { margin-top: 28px; background: #fff; color: #141414; border: 1px solid var(--line); border-top: 4px solid var(--orange); }
 .spec header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 18px 22px; }
 .spec header h3 { font-size: 1.6rem; }
-.spec header .mono { color: rgba(20,20,20,.7); }
+.spec header .mono { color: var(--orange-ink); }
 .spec dl { margin: 0; }
-.spec .r { display: grid; grid-template-columns: 220px minmax(0, 1fr); border-top: 1px solid rgba(20,20,20,.28); }
-.spec dt { padding: 12px 22px; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: .08em; text-transform: uppercase; padding-top: 15px; }
+.spec .r { display: grid; grid-template-columns: 220px minmax(0, 1fr); border-top: 1px solid var(--line); }
+.spec dt { padding: 12px 22px; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: .08em; text-transform: uppercase; padding-top: 15px; color: var(--orange-ink); display: flex; gap: 10px; align-items: baseline; }
+.spec dt::before { content: ""; width: 6px; height: 6px; flex: none; background: var(--orange); transform: translateY(-1px); }
 .spec dd { margin: 0; padding: 12px 22px; font-size: 0.9rem; }
 @media (max-width: 640px) { .spec .r { grid-template-columns: minmax(0, 1fr); } .spec dt { padding-bottom: 0; } .spec dd { padding-top: 4px; } }
 
