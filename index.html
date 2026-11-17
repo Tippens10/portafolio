@@ -195,6 +195,8 @@ a.chip:hover { border-color: var(--ink); }
 .proj:nth-child(even) { border-right: 0; }
 .proj.feature { grid-column: 1 / -1; border-right: 0; }
 .projects > .proj:nth-last-child(-n+2):not(.feature) { border-bottom: 0; }
+.projects > .proj.feature:last-child { border-bottom: 0; }
+.projects > .proj:has(+ .proj.feature:last-child) { border-bottom: 1px solid var(--line); }
 .proj .n { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .proj .n .mono { color: var(--orange-ink); }
 .proj .arr { font-size: 0.9rem; color: var(--muted); }
@@ -207,6 +209,9 @@ a.chip:hover { border-color: var(--ink); }
 .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .shots figure { margin: 0; border: 1px solid var(--line); min-width: 0; }
 .shots figcaption { padding: 8px 12px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); }
+.shots.phones { max-width: 640px; }
+.shots.phones img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 14; object-fit: cover; object-position: 50% 55%; }
+.proj a.live { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--orange-ink); text-decoration: none; border-bottom: 1px solid currentColor; align-self: flex-start; }
 .media { display: grid; gap: 6px; }
 .media.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .media video { display: block; width: 100%; background: #ddd; }
@@ -423,7 +428,7 @@ footer { background: var(--dark); color: #e9e9e6; }
   <section class="row" id="proyectos" aria-label="Proyectos">
     <div class="side"><span class="label o">03 / Proyectos</span><div class="dots" aria-hidden="true"></div></div>
     <div class="main">
-      <h2 class="sec-title">Cinco proyectos. Una misma forma de trabajar.</h2>
+      <h2 class="sec-title">Seis proyectos. Una misma forma de trabajar.</h2>
       <div class="projects">
         <article class="proj feature">
           <div class="n"><span class="mono">01 · Halliburton · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
@@ -463,6 +468,17 @@ footer { background: var(--dark); color: #e9e9e6; }
             <video src="video/control-2.mp4#t=0.5" controls muted playsinline preload="metadata" aria-label="Video del semáforo con PLC Festo, parte 2"></video>
           </div>
           <div class="stack"><span>PLC Festo</span><span>Temporizadores</span><span>Botón peatonal</span></div>
+        </article>
+        <article class="proj feature">
+          <div class="n"><span class="mono">06 · Proyecto personal · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
+          <h3>Camión UNACAR: rastreo en tiempo real</h3>
+          <p>Los estudiantes ven en un mapa dónde va el camión universitario, con el recorrido trazado en azul. El chofer transmite desde una app Android nativa que sigue enviando el GPS con la pantalla apagada. Firebase conecta ambos lados, con reglas de seguridad que solo dejan escribir a los celulares autorizados.</p>
+          <div class="shots phones">
+            <figure><img src="img/camion-app.jpg" alt="App Android del chofer transmitiendo la ubicación" loading="lazy"><figcaption>App del chofer en Kotlin, transmitiendo</figcaption></figure>
+            <figure><img src="img/camion-mapa.jpg" alt="Mapa de los estudiantes con el camión y el recorrido en azul" loading="lazy"><figcaption>Mapa de estudiantes con el trazo (simulación)</figcaption></figure>
+          </div>
+          <a class="live" href="https://camion-unacar.web.app" target="_blank" rel="noopener">Ver en vivo ↗</a>
+          <div class="stack"><span>Kotlin</span><span>Android</span><span>Firebase</span><span>JavaScript</span><span>Leaflet</span></div>
         </article>
       </div>
     </div>
