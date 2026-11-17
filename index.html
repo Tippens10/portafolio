@@ -194,10 +194,7 @@ a.chip:hover { border-color: var(--ink); }
 .proj { padding: 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .proj:nth-child(even) { border-right: 0; }
 .proj.feature { grid-column: 1 / -1; border-right: 0; }
-.projects > .proj:nth-last-child(-n+2):not(.feature) { border-bottom: 0; }
-.projects > .proj.feature:last-child { border-bottom: 0; }
-.projects > .proj:has(+ .proj.feature:last-child) { border-bottom: 1px solid var(--line); }
-.proj .n { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.projects > .proj:nth-last-child(-n+2):not(.feature) { border-bottom: 0; }.proj .n { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .proj .n .mono { color: var(--orange-ink); }
 .proj .arr { font-size: 0.9rem; color: var(--muted); }
 .proj h3 { font-size: 1.35rem; }
@@ -440,37 +437,8 @@ footer { background: var(--dark); color: #e9e9e6; }
           </div>
           <div class="stack"><span>Power Apps</span><span>SharePoint</span><span>QR</span></div>
         </article>
-        <article class="proj">
-          <div class="n"><span class="mono">02 · Halliburton · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
-          <h3>Control de capacitación de personal</h3>
-          <p>Seguimiento de registros de capacitación, vigencia de certificados y próximos requerimientos. El personal sube sus certificados y monitorea su estatus de cumplimiento.</p>
-          <div class="stack"><span>Power Apps</span><span>Power Automate</span></div>
-        </article>
-        <article class="proj">
-          <div class="n"><span class="mono">03 · Competencia nacional · 2021</span><span class="stat">90%</span></div>
-          <h3>Robot limpiador de playas</h3>
-          <p>Robot para recolectar residuos en arena, con visión artificial basada en machine learning que alcanza 90% de precisión en la clasificación de residuos.</p>
-          <div class="stack"><span>Visión artificial</span><span>Machine learning</span><span>Control</span></div>
-        </article>
-        <article class="proj">
-          <div class="n"><span class="mono">04 · Líder de equipo · 2023</span><span class="arr" aria-hidden="true">↗</span></div>
-          <h3>Estacionamiento automatizado</h3>
-          <p>Sistema con Arduino y sensores para asignar lugares y detectar vehículos en tiempo real. Coordiné la integración electrónica, mecánica y de software hasta un prototipo funcional.</p>
-          <div class="media wide"><video src="video/estacionamiento.mp4#t=1" controls muted playsinline preload="metadata" aria-label="Video del prototipo de estacionamiento automatizado"></video></div>
-          <div class="stack"><span>Arduino</span><span>C++</span><span>Sensores</span></div>
-        </article>
-        <article class="proj">
-          <div class="n"><span class="mono">05 · Automatización con PLC</span><span class="arr" aria-hidden="true">↗</span></div>
-          <h3>Semáforo automatizado con PLC Festo</h3>
-          <p>Semáforo programado en un PLC Festo, con temporizadores para el ciclo verde, amarillo y rojo, y un botón peatonal que solicita el cruce dentro de la lógica de control. Cableado y probado en banco.</p>
-          <div class="media pair">
-            <video src="video/control-1.mp4#t=0.5" controls muted playsinline preload="metadata" aria-label="Video del semáforo con PLC Festo, parte 1"></video>
-            <video src="video/control-2.mp4#t=0.5" controls muted playsinline preload="metadata" aria-label="Video del semáforo con PLC Festo, parte 2"></video>
-          </div>
-          <div class="stack"><span>PLC Festo</span><span>Temporizadores</span><span>Botón peatonal</span></div>
-        </article>
         <article class="proj feature">
-          <div class="n"><span class="mono">06 · Proyecto personal · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
+          <div class="n"><span class="mono">02 · Proyecto personal · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
           <h3>Camión UNACAR: rastreo en tiempo real</h3>
           <p>Los estudiantes ven en un mapa dónde va el camión universitario, con el recorrido trazado en azul. El chofer transmite desde una app Android nativa que sigue enviando el GPS con la pantalla apagada. Firebase conecta ambos lados, con reglas de seguridad que solo dejan escribir a los celulares autorizados.</p>
           <div class="shots phones">
@@ -479,6 +447,35 @@ footer { background: var(--dark); color: #e9e9e6; }
           </div>
           <a class="live" href="https://camion-unacar.web.app" target="_blank" rel="noopener">Ver en vivo ↗</a>
           <div class="stack"><span>Kotlin</span><span>Android</span><span>Firebase</span><span>JavaScript</span><span>Leaflet</span></div>
+        </article>
+        <article class="proj">
+          <div class="n"><span class="mono">03 · Halliburton · 2026</span><span class="arr" aria-hidden="true">↗</span></div>
+          <h3>Control de capacitación de personal</h3>
+          <p>Seguimiento de registros de capacitación, vigencia de certificados y próximos requerimientos. El personal sube sus certificados y monitorea su estatus de cumplimiento.</p>
+          <div class="stack"><span>Power Apps</span><span>Power Automate</span></div>
+        </article>
+        <article class="proj">
+          <div class="n"><span class="mono">04 · Competencia nacional · 2021</span><span class="stat">90%</span></div>
+          <h3>Robot limpiador de playas</h3>
+          <p>Robot para recolectar residuos en arena, con visión artificial basada en machine learning que alcanza 90% de precisión en la clasificación de residuos.</p>
+          <div class="stack"><span>Visión artificial</span><span>Machine learning</span><span>Control</span></div>
+        </article>
+        <article class="proj">
+          <div class="n"><span class="mono">05 · Líder de equipo · 2023</span><span class="arr" aria-hidden="true">↗</span></div>
+          <h3>Estacionamiento automatizado</h3>
+          <p>Sistema con Arduino y sensores para asignar lugares y detectar vehículos en tiempo real. Coordiné la integración electrónica, mecánica y de software hasta un prototipo funcional.</p>
+          <div class="media wide"><video src="video/estacionamiento.mp4#t=1" controls muted playsinline preload="metadata" aria-label="Video del prototipo de estacionamiento automatizado"></video></div>
+          <div class="stack"><span>Arduino</span><span>C++</span><span>Sensores</span></div>
+        </article>
+        <article class="proj">
+          <div class="n"><span class="mono">06 · Automatización con PLC</span><span class="arr" aria-hidden="true">↗</span></div>
+          <h3>Semáforo automatizado con PLC Festo</h3>
+          <p>Semáforo programado en un PLC Festo, con temporizadores para el ciclo verde, amarillo y rojo, y un botón peatonal que solicita el cruce dentro de la lógica de control. Cableado y probado en banco.</p>
+          <div class="media pair">
+            <video src="video/control-1.mp4#t=0.5" controls muted playsinline preload="metadata" aria-label="Video del semáforo con PLC Festo, parte 1"></video>
+            <video src="video/control-2.mp4#t=0.5" controls muted playsinline preload="metadata" aria-label="Video del semáforo con PLC Festo, parte 2"></video>
+          </div>
+          <div class="stack"><span>PLC Festo</span><span>Temporizadores</span><span>Botón peatonal</span></div>
         </article>
       </div>
     </div>
